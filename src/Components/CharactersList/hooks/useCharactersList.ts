@@ -25,7 +25,7 @@ export function useCharactersList(pageNum:number){
     useEffect(()=>{
         queryClient.prefetchQuery({
             queryKey:[queryKeys.characters,pageNum+1],
-            queryFn:()=>fetchCharacters(pageNum)
+            queryFn:()=>fetchCharacters(pageNum+1)
         })
     },[pageNum,queryClient])
 
